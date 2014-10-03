@@ -1,7 +1,7 @@
 Package.describe({
   summary: "A package to compile .view files with javascript, coffeescript, css, less, and HTML all in one.",
   version: "1.0.0",
-  // git: " \* Fill me in! *\ "
+  git: "https://github.com/ccorcos/meteor-compile-view.git"
 });
 
 Package.onUse(function(api) {
