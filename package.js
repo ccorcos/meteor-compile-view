@@ -10,12 +10,12 @@ Package.onUse(function(api) {
 
 Package._transitional_registerBuildPlugin({
   name: "compileView",
-  use: [],
+  use: ["spacebars-compiler"],
   sources: ["ccorcos:view.js"]
 });
 
 Package.onTest(function(api) {
   api.use('tinytest');
   api.use('ccorcos:view');
-  api.addFiles('ccorcos:view-tests.js');
+  api.addFiles('ccorcos:view-tests.js', ['client', 'server']);
 });
