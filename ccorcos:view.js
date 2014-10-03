@@ -3,7 +3,6 @@ var handler = function (compileStep) {
   var fileContents = compileStep.read().toString('utf8');
   var oldFilename = compileStep.inputPath;
 
-
   order = fileContents.match(/!js|!html|!css/g)
   contents = fileContents.split(/!js|!html|!css/g).slice(1)
 
@@ -30,14 +29,7 @@ var handler = function (compileStep) {
       data: files['!css'],
     });
 
-    html = files['!html']
-    doHTMLScanning(compileStep, html, html_scanner);
-    // Compile HTML before javascript
-    // compileStep.addJavaScript({
-    //   path: oldFilename.replace(/.view$/, "-spacebars.js"),
-    //   sourcePath: compileStep.inputPath,
-    //   data: SpacebarsCompiler.compile(html)
-    // })
+    doHTMLScanning(compileStep, files['!html'], html_scanner);
 
     compileStep.addJavaScript({
       path: oldFilename.replace(/.view$/, ".js"),

@@ -17,5 +17,4 @@ Package._transitional_registerBuildPlugin({
 Package.onTest(function(api) {
   api.use('tinytest');
   api.use('ccorcos:view');
-  api.addFiles('ccorcos:view-tests.js', ['client', 'server']);
 });
